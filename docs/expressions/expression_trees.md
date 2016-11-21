@@ -64,6 +64,11 @@ All nodes have the following methods:
     var eval = node.eval({x: 3};    // returns 5
     ```
 
+-   `equals(other: Node) : boolean`
+
+    Test whether this node equals an other node. Does a deep comparison of the
+    values of both nodes.
+
 -   `filter(callback: function) : Node[]`
 
     Recursively filter nodes in an expression tree. The `callback` function is
@@ -200,6 +205,12 @@ All nodes have the following methods:
 ### Properties
 
 Each `Node` has the following properties:
+
+-   `comment: string`
+
+    A string holding a comment if there was any in the expression, or else the
+    string will be empty string. A comment can be attached to the root node of
+    an expression or to each of the childs nodes of a `BlockNode`.
 
 -   `isNode: true`
 

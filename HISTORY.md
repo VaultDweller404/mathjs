@@ -1,6 +1,54 @@
 # History
 
 
+## 2016-11-05, version 3.7.0
+
+- Implemented method `Node.equals(other)` for all nodes of the expression parser.
+- Implemented BigNumber support in function `arg()`.
+- Command Line Interface loads faster.
+- Implicit conversions between Fractions and BigNumbers throw a neat error now
+  (See #710).
+
+
+## 2016-10-21, version 3.6.0
+
+- Implemented function `erf()`. THanks @patgrasso.
+- Extended function `cross()` to support n-d vectors. Thanks @patgrasso.
+- Extended function `pickRandom` with the option to pick multiple values from
+  an array and give the values weights: `pickRandom(possibles, number, weights)`.
+  Thanks @woylie.
+- Parser now exposes test functions like `isAlpha` which can be replaced in
+  order to adjust the allowed characters in variables names (See #715).
+- Fixed #727: Parser not throwing an error for invalid implicit multiplications
+  like `-2 2` and `2^3 4` (right after the second value of an operator).
+- Fixed #688: Describe allowed variable names in the docs.
+
+
+## 2016-09-21, version 3.5.3
+
+- Some more fixes regarding numbers ending with a decimal mark (like `2.`).
+
+
+## 2016-09-20, version 3.5.2
+
+- Fixed numbers ending with a decimal mark (like `2.`) not being supported by
+  the parser, solved the underlying ambiguity in the parser. See #707, #711.
+
+
+## 2016-09-12, version 3.5.1
+
+- Removed a left over console.log statement. Thanks @eknkc.
+
+
+## 2016-09-07, version 3.5.0
+
+- Comments of expressions are are now stored in the parsed nodes. See #690.
+- Fixed function `print` not accepting an Object with formatting options as
+  third parameter Thanks @ThomasBrierley.
+- Fixed #707: The expression parser no longer accepts numbers ending with a dot
+  like `2.`.
+
+
 ## 2016-08-08, version 3.4.1
 
 - Fixed broken bundle files (`dist/math.js`, `dist/math.min.js`).
